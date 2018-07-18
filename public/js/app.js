@@ -8,8 +8,7 @@ app.controller('MainController', ['$http', function($http) {
       method:'GET',
       url:'/rabbits'
     }).then(response => {
-      this.rabbits = response
-      console.log(this.rabbits);
+      this.rabbits = response.data
     })
   }
 
