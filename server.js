@@ -13,10 +13,6 @@ mongoose.connection.once('open', () => {
 const rabbitController = require('./controllers/rabbits.js');
 app.use('/rabbits', rabbitController);
 
-app.get('/', (req, res) => {
-  res.send('Hello World')
-})
-
 app.listen(3000, () => {
   console.log('listening...');
 })
