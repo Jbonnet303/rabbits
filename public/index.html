@@ -22,7 +22,7 @@
 
       <form ng-submit="ctrl.createRabbit()">
 
-       Image: <br/> <input type="text" ng-model="ctrl.image" name="img" /><br />
+       Image: <br/> <input type="text" ng-model="ctrl.image" name="img" placeholder="image"/><br/>
        Color: <br/> <input type="text" ng-model="ctrl.color" placeholder="color"/><br/>
        Size:  <br/> <input type="text" ng-model="ctrl.size" placeholder="size"/><br/>
        Location: <br/> <input type="text" ng-model="ctrl.location" placeholder="location"/><br/>
@@ -35,7 +35,7 @@
 
        <tr ng-repeat="rabbit in ctrl.rabbits">
 
-         <img ng-src="rabbit.image">
+         <img ng-src="{{rabbit.image}}">
          <td>{{rabbit.color}}</td>
          <td>{{rabbit.size}}</td>
          <td>{{rabbit.location}}</td>
