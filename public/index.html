@@ -29,14 +29,22 @@
 
        <input type="submit" value="Spotted A Rabbit" />
 
+
      </form>
 
-        <div ng-repeat="rabbit in ctrl.rabbits">
-          <img ng-src="{{rabbit.image}}">
-          {{rabbit.color}}
-          {{rabbit.size}}
-          {{rabbit.location}}
+      <div class="flex-rabbit">
+
+        <div class="rabbit-container" ng-repeat="rabbit in ctrl.rabbits">
+          <img ng-src="{{rabbit.image}}" width="200px" height="200px"><br/>
+          Color: {{rabbit.color}}<br/>
+          Size: {{rabbit.size}}<br/>
+          Location: {{rabbit.location}}<br/>
+          <button ng-click="ctrl.removeRabbit(rabbit)"> Remove </button>
+          <button ng-click="ctrl.editRabbit(rabbit)"> Edit </button>
+
         </div>
+      </div>
+
 
    </div>
 

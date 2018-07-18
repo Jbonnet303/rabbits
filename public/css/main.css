@@ -8,16 +8,11 @@ h1 {
 }
 
 html {
-  position: absolute;
-/* z-index: -1;
-top: 0;
-bottom: 0;
-left: 0;
-right: 0; */
+position: absolute;
 background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Outline_of_a_bunny.svg/2000px-Outline_of_a_bunny.svg.png) center center;
-/* opacity: .7; */
 width: 100%;
 height: 100%;
+background-repeat: no-repeat;
 -webkit-background-size: cover;
 -moz-background-size: cover;
 -o-background-size: cover;
@@ -28,4 +23,22 @@ form {
   justify-content: center;
   padding-top: 10%;
   opacity: .6;
+}
+
+button {
+  color: black;
+  background-color: steelblue;
+}
+
+.rabbit-container {
+  padding-top: 30%;
+}
+
+.flex-rabbit {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  opacity: .9;
+  text-align: center;
 }
