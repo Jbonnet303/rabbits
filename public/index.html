@@ -31,7 +31,14 @@
 
      </form>
 
-     <table>
+        <div ng-repeat="rabbit in ctrl.rabbits">
+          <img ng-src="{{rabbit.image}}">
+          {{rabbit.color}}
+          {{rabbit.size}}
+          {{rabbit.location}}
+        </div>
+
+     <!-- <table>
 
        <tr ng-repeat="rabbit in ctrl.rabbits">
 
@@ -42,7 +49,7 @@
 
        </tr>
 
-     </table>
+     </table> -->
 
    </div>
 
