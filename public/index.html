@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" ng-app="MyApp">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js" charset="utf-8"></script>
+<script src="/js/app.js" charset="utf-8"></script>
+
+<link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/skeleton.css">
+  <link rel="stylesheet" href="/css/main.css">
+
+  </head>
+  <body>
+
+    <body ng-controller="MainController as ctrl">
+
+  <div class="container">
+
+   <h5>{{ ctrl.h5 }}</h5>
+
+   <form ng-submit="ctrl.createRabbit()">
+
+     Image: <br/> <input type="text" name="img" /><br />
+     Color: <br/> <input type="text" ng-model="ctrl.color" placeholder="color"/><br/>
+     Size:  <br/> <input type="text" ng-model="ctrl.size" placeholder="size"/><br/>
+     Location: <br/> <input type="text" ng-model="ctrl.location" placeholder="location"/><br/>
+
+   <input type="submit" value="Spotted A Rabbit" />
+
+   </form>
+
+   <table>
+
+     <tr ng-repeat="rabbit in ctrl.rabbits">
+
+       <td> {{rabbit.image}} Spotted</td>
+       
+
+     </tr>
+
+
+   </table>
+
+</div>
+
+  </body>
+</html>
