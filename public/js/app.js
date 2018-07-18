@@ -25,6 +25,8 @@ app.controller('MainController', ['$http', function($http) {
     }).then(response => {
       console.log(response);
       this.rabbits.unshift(response);
+    }, error => {
+      console.log(error);
     })
   }
 
@@ -36,6 +38,8 @@ app.controller('MainController', ['$http', function($http) {
     }).then(response => {
       console.log(response);
       this.getRabbits();
+    }, error => {
+      console.log(error);
     })
   }
 
@@ -46,6 +50,8 @@ app.controller('MainController', ['$http', function($http) {
     }).then(response => {
       console.log(response);
       this.getRabbits();
+    }, error => {
+      console.log(error);
     })
   }
 
