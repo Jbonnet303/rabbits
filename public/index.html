@@ -18,7 +18,7 @@
 
     <div class="container">
 
-      <h5>{{ ctrl.h5 }}</h5>
+
 
       <form ng-submit="ctrl.createRabbit()">
 
@@ -40,11 +40,22 @@
           Size: {{rabbit.size}}<br/>
           Location: {{rabbit.location}}<br/>
           <button ng-click="ctrl.removeRabbit(rabbit)"> Remove </button>
-          <button ng-click="ctrl.editRabbit(rabbit)"> Edit </button>
+          <button ng-click="ctrl.editIndex=$index;ctrl.copyRabbit(rabbit)"> Edit </button>
+
+          <form ng-submit="ctrl.updateRabbit(ctrl.rabbitCopy)" ng-if="ctrl.editIndex==$index">
+          <!-- <h2>Edit Rabbit</h2> -->
+          Image: <br/> <input type="text" ng-model="ctrl.rabbitCopy.image" name="img" placeholder="image"/><br/>
+          Color: <br/> <input type="text" ng-model="ctrl.rabbitCopy.color" placeholder="color"/><br/>
+          Size:  <br/> <input type="text" ng-model="ctrl.rabbitCopy.size" placeholder="size"/><br/>
+          Location: <br/> <input type="text" ng-model="ctrl.rabbitCopy.location" placeholder="location"/><br/>
+
+          <input type="submit" value="Save Edit" />
+
+          </form>
 
         </div>
-      </div>
 
+      </div>
 
    </div>
 
