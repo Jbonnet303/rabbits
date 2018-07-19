@@ -3,12 +3,19 @@ const app = angular.module('MyApp', []);
 app.controller('MainController', ['$http', function($http) {
   console.log('hi');
 
+  this.copyRabbit = (rabbit) => {
+    this.rabbitCopy = Object.assign({}, rabbit);
+    console.log(this.rabbitCopy);
+  }
+
   this.getRabbits = () => {
     $http({
       method:'GET',
       url:'/rabbits'
     }).then(response => {
       this.rabbits = response.data
+      // this.rabbitCopy = Object.assign({}, this.rabbits);
+      // console.log(this.rabbitCopy);
     })
   }
 
