@@ -36,7 +36,7 @@ router.delete('/:id', (req, res) => {
 })
 
 router.put('/:id', (req, res) => {
-  Rabbit.findByIdAndUpdate(req.params.id, (err, rabbit) => {
+  Rabbit.findByIdAndUpdate(req.params.id, req.body, (err, rabbit) => {
     if (err) {
       console.log(err);
       res.status(500).json(err);

@@ -44,6 +44,7 @@ app.controller('MainController', ['$http', function($http) {
       data: rabbit
     }).then(response => {
       console.log(response);
+      this.editIndex = -1;
       this.getRabbits();
     }, error => {
       console.log(error);
