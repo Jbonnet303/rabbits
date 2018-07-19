@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" ng-app="MyApp">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js" charset="utf-8"></script>
+    <script src="/js/app.js" charset="utf-8"></script>
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/skeleton.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+  </head>
+
+  <body ng-controller="MainController as ctrl">
+
+    <h1>Wabbit Spotter</h1>
+
+    <div class="container">
+
+
+
+      <form ng-submit="ctrl.createRabbit()">
+
+       Image: <br/> <input type="text" ng-model="ctrl.image" name="img" placeholder="image"/><br/>
+       Color: <br/> <input type="text" ng-model="ctrl.color" placeholder="color"/><br/>
+       Size:  <br/> <input type="text" ng-model="ctrl.size" placeholder="size"/><br/>
+       Location: <br/> <input type="text" ng-model="ctrl.location" placeholder="location"/><br/>
+
+       <input type="submit" value="Spotted A Rabbit" />
+
+
+     </form>
+
+      <div class="flex-rabbit">
+
+        <div class="rabbit-container" ng-repeat="rabbit in ctrl.rabbits">
+          <img ng-src="{{rabbit.image}}" width="200px" height="200px"><br/>
+          Color: {{rabbit.color}}<br/>
+          Size: {{rabbit.size}}<br/>
+          Location: {{rabbit.location}}<br/>
+          <button ng-click="ctrl.removeRabbit(rabbit)"> Remove </button>
+          <button ng-click="ctrl.editIndex=$index;ctrl.copyRabbit(rabbit)"> Edit </button>
+
+          <form ng-submit="ctrl.updateRabbit(ctrl.rabbitCopy)" ng-if="ctrl.editIndex==$index">
+          <!-- <h2>Edit Rabbit</h2> -->
+          Image: <br/> <input type="text" ng-model="ctrl.rabbitCopy.image" name="img" placeholder="image"/><br/>
+          Color: <br/> <input type="text" ng-model="ctrl.rabbitCopy.color" placeholder="color"/><br/>
+          Size:  <br/> <input type="text" ng-model="ctrl.rabbitCopy.size" placeholder="size"/><br/>
+          Location: <br/> <input type="text" ng-model="ctrl.rabbitCopy.location" placeholder="location"/><br/>
+
+          <input type="submit" value="Save Edit" />
+
+          </form>
+
+        </div>
+
+      </div>
+
+   </div>
+
+  </body>
+</html>
